@@ -1,29 +1,38 @@
 OCÉANO DE MISERICORDIA - SITIO WEB
 ===================================
 
-CÓMO SUBIRLO A TU HOSTING
-1. Entra al Administrador de archivos de tu hosting (cPanel, Hostinger, etc.) o conéctate por FTP.
-2. Abre la carpeta pública del dominio (normalmente "public_html").
-3. Sube "index.html" y la carpeta "media" completa (video y fotos).
-   Deben quedar así:
-      public_html/index.html
-      public_html/media/presentacion.mp4
-      public_html/media/presentacion.jpg
-      (y las demás fotos .jpg de la carpeta media)
-4. Abre https://oceanodemisericordia.org para verlo.
+ESTRUCTURA
+  index.html            Inicio
+  quienes-somos.html    Misión, visión, valores, objetivos, fundamento y logotipo
+  servicios.html        Líneas de acción
+  equipo.html           Terapeutas
+  noticias.html         Noticias, eventos y blog
+  en-vivo.html          Transmisión en vivo (YouTube)
+  galeria.html          Fotos y videos
+  como-ayudar.html      Donaciones y voluntariado
+  preguntas.html        Preguntas frecuentes
+  contacto.html         Datos de contacto y formulario
+  assets/styles.css     Diseño de todas las páginas
+  assets/main.js        Funciones y CONFIGURACIÓN (correo y YouTube)
+  media/                Fotos y video
 
-QUÉ FALTA COMPLETAR (aparece resaltado en amarillo en la página)
-- Teléfono, correo, dirección y horario (sección Contacto).
-- Datos bancarios para donativos (sección Cómo ayudar).
-- Nombres y credenciales de los terapeutas (sección Equipo).
-- Noticias, eventos, artículos del blog y fotos de la galería.
-- Enlaces a Facebook, Instagram y YouTube (pie de página).
+PUBLICAR CAMBIOS (GitHub -> Hostinger)
+En el repositorio oceano-web: Add file > Upload files, arrastra TODO el contenido
+de esta carpeta (archivos y carpetas assets y media) y haz Commit changes.
+Hostinger lo publica solo en uno o dos minutos.
 
-TRANSMISIÓN EN VIVO (YouTube)
-Abre index.html con un editor de texto (Bloc de notas, VS Code) y busca "CONFIGURACIÓN" al final del archivo:
-- YOUTUBE_VIDEO_ID: pega el ID del video o de la transmisión programada
-  (lo que va después de "v=" en youtube.com/watch?v=XXXXXXXXXXX, o después de /live/).
-- o YOUTUBE_CHANNEL_ID: el ID del canal (empieza con "UC"); muestra automáticamente
-  la transmisión que esté en vivo en ese momento.
+CONFIGURAR YOUTUBE Y CORREO
+Edita assets/main.js y busca "CONFIGURACIÓN" al inicio:
+- CONTACT_EMAIL: correo que recibirá los mensajes del formulario.
+- YOUTUBE_VIDEO_ID: ID de un video o transmisión programada (lo que va después
+  de "v=" en youtube.com/watch?v=XXXXXXXXXXX, o después de /live/).
+- o YOUTUBE_CHANNEL_ID: ID del canal (empieza con "UC"); muestra la transmisión
+  que esté en vivo en ese momento.
 - YOUTUBE_CHANNEL_URL: enlace al canal para el botón "Ver canal de YouTube".
-- CONTACT_EMAIL: el correo que recibirá los mensajes del formulario.
+
+QUÉ FALTA COMPLETAR (resaltado en amarillo en las páginas)
+- Teléfono, correo, dirección y horario (contacto.html).
+- Datos bancarios (como-ayudar.html).
+- Nombres y credenciales de terapeutas (equipo.html).
+- Noticias, eventos, artículos y fotos de galería.
+- Enlaces a redes sociales (pie de página, en todas las páginas).
